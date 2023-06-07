@@ -1,45 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Form Đăng ký</title>
+  <title>Trang đăng ký</title>
 </head>
 <body>
-  <h2>Đăng ký</h2>
-  <form id="registrationForm">
-    <label for="name">Họ và tên:</label><br>
-    <input type="text" id="name" name="name"><br>
+  <h2>Trang đăng ký</h2>
+  <p>Hãy đăng ký để truy cập vào các tính năng đặc biệt.</p>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br>
-
-    <input type="submit" value="Đăng ký">
-  </form>
-
-  <script>
-    document.getElementById("registrationForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Ngăn chặn form gửi dữ liệu
-
-      // Lấy giá trị từ form
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-
-      // Gửi dữ liệu đăng ký đến máy chủ (sử dụng Fetch API)
-      fetch("/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ name: name, email: email })
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert(data.message);
-        // Thực hiện các hành động sau khi đăng ký thành công
-      })
-      .catch(error => {
-        console.error("Đăng ký thất bại:", error);
-      });
-    });
-  </script>
+  <a href="https://github.com/your-username/your-repo-name">Đăng ký ngay</a>
 </body>
 </html>
